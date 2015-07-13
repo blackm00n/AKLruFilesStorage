@@ -124,7 +124,7 @@ NSString* const LruFilesStorageException = @"com.akozhevnikov.LruFilesStorageExc
     NSString* permanentPath = [self.path stringByAppendingPathComponent:fileName];
     NSURL* permanentUrl = [NSURL fileURLWithPath:permanentPath];
     if (![[NSFileManager defaultManager] moveItemAtURL:[NSURL fileURLWithPath:path] toURL:permanentUrl error:&fileError]) {
-        [self.class log:@"Could not move file at %@ to %@ with error %@" level:LFSLogLevelError, path, permanentUrl, fileError];
+        [LFSLogging log:@"Could not move file at %@ to %@ with error %@" level:LFSLogLevelError, path, permanentUrl, fileError];
         return nil;
     }
 
@@ -142,7 +142,7 @@ NSString* const LruFilesStorageException = @"com.akozhevnikov.LruFilesStorageExc
 - (void)drain:(int64_t)totalSize
 {
     if (totalSize > self.highWaterTotalSize) {
-        [self.class log:@"Freeing storage" level:LFSLogLevelTrace];
+        [LFSLogging log:@"Freeing storage" level:LFSLogLevelTrace];
 
         const NSUInteger pageSize = 100;
 
@@ -158,7 +158,7 @@ NSString* const LruFilesStorageException = @"com.akozhevnikov.LruFilesStorageExc
                     totalSize -= record.size;
                     [self.database deleteRecordWithKey:record.key];
                 } else {
-                    [self.class log:@"Failed to delete file: %@" level:LFSLogLevelError, deletionError];
+                    [LFSLogging log:@"Failed to delete file: %@" level:LFSLogLevelError, deletionError];
                 }
 
                 if (totalSize < self.lowWaterTotalSize) {
@@ -167,7 +167,7 @@ NSString* const LruFilesStorageException = @"com.akozhevnikov.LruFilesStorageExc
             }
 
             if (mruRecords.count < pageSize || totalSize < self.lowWaterTotalSize) {
-                [self.class log:@"Drained %@ files, new total size is %@" level:LFSLogLevelTrace, @(mruRecords.count), @(totalSize)];
+                [LFSLogging log:@"Drained %@ files, new total size is %@" level:LFSLogLevelTrace, @(mruRecords.count), @(totalSize)];
                 break;
             }
         } while (YES);
