@@ -145,6 +145,7 @@ NSString* const LruFilesStorageException = @"com.akozhevnikov.LruFilesStorageExc
         [LFSLogging log:@"Freeing storage" level:LFSLogLevelTrace];
 
         const NSUInteger pageSize = 100;
+        int count = 0;
 
         do {
             NSArray* mruRecords = [self.database fetchMruRecordsOfBatchSize:pageSize];
@@ -155,6 +156,7 @@ NSString* const LruFilesStorageException = @"com.akozhevnikov.LruFilesStorageExc
                 BOOL deletionResult = [[NSFileManager defaultManager] removeItemAtURL:[NSURL fileURLWithPath:pathToDelete]
                                                                                 error:&deletionError];
                 if (deletionResult || ([deletionError.domain isEqualToString:NSCocoaErrorDomain] && deletionError.code == NSFileNoSuchFileError)) {
+                    ++count;
                     totalSize -= record.size;
                     [self.database deleteRecordWithKey:record.key];
                 } else {
@@ -167,10 +169,11 @@ NSString* const LruFilesStorageException = @"com.akozhevnikov.LruFilesStorageExc
             }
 
             if (mruRecords.count < pageSize || totalSize < self.lowWaterTotalSize) {
-                [LFSLogging log:@"Drained %@ files, new total size is %@" level:LFSLogLevelTrace, @(mruRecords.count), @(totalSize)];
                 break;
             }
         } while (YES);
+
+        [LFSLogging log:@"Drained %@ files, new total size is %@" level:LFSLogLevelTrace, @(count), @(totalSize)];
     }
 
     [self.database updateTotalSize:totalSize];
