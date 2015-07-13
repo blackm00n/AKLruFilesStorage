@@ -1,0 +1,9 @@
+platform :ios, '7.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+pod 'FMDB', '~> 2.5'
+pod 'AKLruDictionary', '~> 2.0'
+
+inhibit_all_warnings!
+

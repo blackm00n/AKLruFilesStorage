@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05629EFBFFA6D3C424D0A9BD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C9632764DFC15A7F73EB07 /* libPods.a */; };
+		9C463962407B35F93EBD79EA /* LFSDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C46398602D710D4C627F2CD /* LFSDatabase.m */; };
+		9C463B59BF387A7C6086B925 /* LFSDirectory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9C463A0DC672B49D6155825A /* LFSDirectory.h */; };
+		9C463BD75883C104F52DDD69 /* LFSDatabaseRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C463B2041998E318B6F3009 /* LFSDatabaseRecord.m */; };
+		9C463C701380530EB71CA29A /* LFSRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C463519389C44507B3B0D4F /* LFSRecord.m */; };
+		9C463C8E4C9CDD8E432E2A4B /* libLruFilesStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C463A495FC13881176D3182 /* libLruFilesStorage.a */; };
+		9C463F14890D6C4899F432D0 /* LFSDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C463BFB57CA9B392F0C5B99 /* LFSDirectory.m */; };
+		9C463FD541AA344ACA216323 /* LFSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4632E7AE0724AADAB14E18 /* LFSLogging.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C4636685AAC5B5664E87B8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C463A6C28BCB925DBA068E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C463823FE8470CD2C37E9A8;
+			remoteInfo = LruFilesStorage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9C463AF6CE6B90414188ACE6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				9C463B59BF387A7C6086B925 /* LFSDirectory.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		69C9632764DFC15A7F73EB07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B6CC5793882E5566719770F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9C4631BF6649DD61653A9F59 /* LruFilesStorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LruFilesStorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4632E7AE0724AADAB14E18 /* LFSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFSLogging.m; sourceTree = "<group>"; };
+		9C4634260765BC9827C5E7C5 /* LFSRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFSRecord.h; sourceTree = "<group>"; };
+		9C463519389C44507B3B0D4F /* LFSRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFSRecord.m; sourceTree = "<group>"; };
+		9C46362A9E91B08B09335BD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		9C46371ED9A911D6BC564016 /* LFSDatabaseRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFSDatabaseRecord.h; sourceTree = "<group>"; };
+		9C46398602D710D4C627F2CD /* LFSDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFSDatabase.m; sourceTree = "<group>"; };
+		9C463A0DC672B49D6155825A /* LFSDirectory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSDirectory.h; sourceTree = "<group>"; };
+		9C463A495FC13881176D3182 /* libLruFilesStorage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLruFilesStorage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C463B2041998E318B6F3009 /* LFSDatabaseRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFSDatabaseRecord.m; sourceTree = "<group>"; };
+		9C463BFB57CA9B392F0C5B99 /* LFSDirectory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSDirectory.m; sourceTree = "<group>"; };
+		9C463E4408B48DCD67F494F1 /* LFSDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFSDatabase.h; sourceTree = "<group>"; };
+		9C463FD17FCB95DEC523D3AC /* LFSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFSLogging.h; sourceTree = "<group>"; };
+		CA85554C6B6820BA7719DCB5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C4631E9C75B3CA01E91A17D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C463C8E4C9CDD8E432E2A4B /* libLruFilesStorage.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C46345C9C4BA9A5225AAF5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05629EFBFFA6D3C424D0A9BD /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09998AE564257B5DE344BF47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69C9632764DFC15A7F73EB07 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C463570960CC37F0BB7277A /* LruFilesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				9C463A0DC672B49D6155825A /* LFSDirectory.h */,
+				9C463BFB57CA9B392F0C5B99 /* LFSDirectory.m */,
+				9C46398602D710D4C627F2CD /* LFSDatabase.m */,
+				9C463E4408B48DCD67F494F1 /* LFSDatabase.h */,
+				9C4632E7AE0724AADAB14E18 /* LFSLogging.m */,
+				9C463FD17FCB95DEC523D3AC /* LFSLogging.h */,
+				9C463519389C44507B3B0D4F /* LFSRecord.m */,
+				9C4634260765BC9827C5E7C5 /* LFSRecord.h */,
+				9C463B2041998E318B6F3009 /* LFSDatabaseRecord.m */,
+				9C46371ED9A911D6BC564016 /* LFSDatabaseRecord.h */,
+			);
+			name = LruFilesStorage;
+			path = LruFilesStorage;
+			sourceTree = "<group>";
+		};
+		9C4638B275B6EE90C73EE854 = {
+			isa = PBXGroup;
+			children = (
+				9C463C29D3B1330155BB4A4D /* Products */,
+				9C463570960CC37F0BB7277A /* LruFilesStorage */,
+				9C463B6E2D1CD3E963C52592 /* LruFilesStorageTests */,
+				BBCF666FE87F2466982B616C /* Pods */,
+				09998AE564257B5DE344BF47 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9C463B6E2D1CD3E963C52592 /* LruFilesStorageTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C463C0A3EA9881BAA1C5A4F /* Supporting Files */,
+			);
+			name = LruFilesStorageTests;
+			path = LruFilesStorageTests;
+			sourceTree = "<group>";
+		};
+		9C463C0A3EA9881BAA1C5A4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C46362A9E91B08B09335BD4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C463C29D3B1330155BB4A4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C463A495FC13881176D3182 /* libLruFilesStorage.a */,
+				9C4631BF6649DD61653A9F59 /* LruFilesStorageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBCF666FE87F2466982B616C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA85554C6B6820BA7719DCB5 /* Pods.debug.xcconfig */,
+				8B6CC5793882E5566719770F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C46360C5AD9D06810350611 /* LruFilesStorageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C463E7EDF5BD334D67D4BF3 /* Build configuration list for PBXNativeTarget "LruFilesStorageTests" */;
+			buildPhases = (
+				9C463B24AC09289C85EB1279 /* Sources */,
+				9C4631E9C75B3CA01E91A17D /* Frameworks */,
+				9C463B9F708854B0C08C6544 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C4635EB8BF9200A9539E241 /* PBXTargetDependency */,
+			);
+			name = LruFilesStorageTests;
+			productName = LruFilesStorageTests;
+			productReference = 9C4631BF6649DD61653A9F59 /* LruFilesStorageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C463823FE8470CD2C37E9A8 /* LruFilesStorage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C463DDBA7686D333CF2ACA8 /* Build configuration list for PBXNativeTarget "LruFilesStorage" */;
+			buildPhases = (
+				69C39DE27B139C02299BCD99 /* Check Pods Manifest.lock */,
+				9C463F60FEA2FD4FC1B8624B /* Sources */,
+				9C46345C9C4BA9A5225AAF5E /* Frameworks */,
+				9C463AF6CE6B90414188ACE6 /* CopyFiles */,
+				B69CE83577A6A5D9D52AC70D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LruFilesStorage;
+			productName = LruFilesStorage;
+			productReference = 9C463A495FC13881176D3182 /* libLruFilesStorage.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C463A6C28BCB925DBA068E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+			};
+			buildConfigurationList = 9C4632ECEE749F50BAF7F48D /* Build configuration list for PBXProject "LruFilesStorage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9C4638B275B6EE90C73EE854;
+			productRefGroup = 9C463C29D3B1330155BB4A4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C463823FE8470CD2C37E9A8 /* LruFilesStorage */,
+				9C46360C5AD9D06810350611 /* LruFilesStorageTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C463B9F708854B0C08C6544 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69C39DE27B139C02299BCD99 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B69CE83577A6A5D9D52AC70D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C463B24AC09289C85EB1279 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C463F60FEA2FD4FC1B8624B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C463F14890D6C4899F432D0 /* LFSDirectory.m in Sources */,
+				9C463962407B35F93EBD79EA /* LFSDatabase.m in Sources */,
+				9C463FD541AA344ACA216323 /* LFSLogging.m in Sources */,
+				9C463C701380530EB71CA29A /* LFSRecord.m in Sources */,
+				9C463BD75883C104F52DDD69 /* LFSDatabaseRecord.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C4635EB8BF9200A9539E241 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C463823FE8470CD2C37E9A8 /* LruFilesStorage */;
+			targetProxy = 9C4636685AAC5B5664E87B8D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9C463621B5BDF64E34B640E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B6CC5793882E5566719770F /* Pods.release.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = LruFilesStorage;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+			};
+			name = Release;
+		};
+		9C463691AE6D2B27FAE6569F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA85554C6B6820BA7719DCB5 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = LruFilesStorage;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+			};
+			name = Debug;
+		};
+		9C4638A90040A9128BD03684 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C463B8268A66018059F7E18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LruFilesStorageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = LruFilesStorageTests;
+			};
+			name = Release;
+		};
+		9C463E29B05F9F6158296465 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9C463F6DEBC3658464A18267 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LruFilesStorageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = LruFilesStorageTests;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C4632ECEE749F50BAF7F48D /* Build configuration list for PBXProject "LruFilesStorage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C463E29B05F9F6158296465 /* Debug */,
+				9C4638A90040A9128BD03684 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C463DDBA7686D333CF2ACA8 /* Build configuration list for PBXNativeTarget "LruFilesStorage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C463691AE6D2B27FAE6569F /* Debug */,
+				9C463621B5BDF64E34B640E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C463E7EDF5BD334D67D4BF3 /* Build configuration list for PBXNativeTarget "LruFilesStorageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C463F6DEBC3658464A18267 /* Debug */,
+				9C463B8268A66018059F7E18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C463A6C28BCB925DBA068E3 /* Project object */;
+}
