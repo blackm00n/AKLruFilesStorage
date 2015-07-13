@@ -125,7 +125,7 @@ static NSString* const kDeleteRecord = @"DELETE FROM "TABLE_RECORDS" WHERE "COLU
         LFSDatabaseRecord* record = [[LFSDatabaseRecord alloc] initWithFileName:[resultSet stringForColumn:COLUMN_FILE_NAME]
                                                                             key:[resultSet stringForColumn:COLUMN_KEY]
                                                                  lastAccessTime:[NSDate dateWithTimeIntervalSince1970:[resultSet doubleForColumn:COLUMN_LAST_ACCESS_TIME]]
-                                                                           size:[resultSet longLongIntForColumn:COLUMN_TOTAL_SIZE]];
+                                                                           size:[resultSet longLongIntForColumn:COLUMN_SIZE]];
         [result addObject:record];
     }
 
