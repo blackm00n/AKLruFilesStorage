@@ -139,7 +139,7 @@ static NSString* const kDeleteRecord = @"DELETE FROM "TABLE_RECORDS" WHERE "COLU
 - (void)updateLastAccessTime:(NSDate*)lastAccessTime forRecordWithKey:(NSString*)key
 {
     NSError* error = nil;
-    if (![self.db executeUpdate:kUpdateLastAccessTimeForRecord withErrorAndBindings:&error, [lastAccessTime timeIntervalSince1970], key]) {
+    if (![self.db executeUpdate:kUpdateLastAccessTimeForRecord withErrorAndBindings:&error, @([lastAccessTime timeIntervalSince1970]), key]) {
         [NSException raise:LFSDatabaseException format:@"Failed to apply deferred timestamp: %@", error];
     }
 }
