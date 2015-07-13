@@ -11,7 +11,7 @@
 NSString* const LFSDatabaseException = @"com.akozhevnikov.LFSDatabaseException";
 
 
-static const NSUInteger DatabaseVersion = 1;
+static const long SupportedVersion = 1;
 
 
 #define TABLE_DB_INFO @"db_info"
@@ -20,7 +20,8 @@ static const NSUInteger DatabaseVersion = 1;
 
 static NSString* const kCreateDbInfoTable = @"CREATE TABLE IF NOT EXISTS "TABLE_DB_INFO" ("COLUMN_TOTAL_SIZE" INTEGER, "COLUMN_VERSION" INTEGER)";
 static NSString* const kInitDbInfoTable = @"INSERT INTO "TABLE_DB_INFO" VALUES(?, ?)";
-static NSString* const kFetchTotalSize = @"SELECT "COLUMN_TOTAL_SIZE" FROM " TABLE_DB_INFO;
+static NSString* const kFetchVersion = @"SELECT "COLUMN_VERSION" FROM "TABLE_DB_INFO;
+static NSString* const kFetchTotalSize = @"SELECT "COLUMN_TOTAL_SIZE" FROM "TABLE_DB_INFO;
 static NSString* const kUpdateTotalSize = @"UPDATE " TABLE_DB_INFO " SET "COLUMN_TOTAL_SIZE"=?";
 
 
@@ -64,14 +65,27 @@ static NSString* const kDeleteRecord = @"DELETE FROM "TABLE_RECORDS" WHERE "COLU
     if (![_db executeUpdate:kCreateDbInfoTable withErrorAndBindings:&error]) {
         [NSException raise:LFSDatabaseException format:@"Failed to create '"TABLE_DB_INFO"' table: %@", error];
     }
-    if (![_db executeUpdate:kInitDbInfoTable withErrorAndBindings:&error, @(0), @(DatabaseVersion)]) {
-        [NSException raise:LFSDatabaseException format:@"Failed to initialize '"TABLE_DB_INFO"' table: %@", error];
+    FMResultSet* resultSet = [_db executeQuery:kFetchVersion];
+    if (resultSet == nil) {
+        [NSException raise:LFSDatabaseException format:@"Failed to fetch version: %@", _db.lastError];
+    }
+    if ([resultSet nextWithError:&error]) {
+        const long version = [resultSet longForColumn:COLUMN_VERSION];
+        if (version > SupportedVersion) {
+            [NSException raise:LFSDatabaseException format:@"Database version %@ is larger than supported version %@", @(version), @(SupportedVersion)];
+        } else {
+            // handle upgrade
+        }
+    } else {
+        if (![_db executeUpdate:kInitDbInfoTable withErrorAndBindings:&error, @(0), @(SupportedVersion)]) {
+            [NSException raise:LFSDatabaseException format:@"Failed to initialize '"TABLE_DB_INFO"' table: %@", error];
+        }
     }
     if (![_db executeUpdate:kCreateRecordsTable withErrorAndBindings:&error]) {
         [NSException raise:LFSDatabaseException format:@"Failed to create '"TABLE_RECORDS"' table: %@", error];
     }
     if (![_db executeUpdate:kCreateRecordsIndexByKey withErrorAndBindings:&error]) {
-        [NSException raise:LFSDatabaseException format:@"Failed to create '"TABLE_RECORDS"' table: %@", error];
+        [NSException raise:LFSDatabaseException format:@"Failed to create '"INDEX_KEY"' table: %@", error];
     }
 
     return self;
